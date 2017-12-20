@@ -1,14 +1,4 @@
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory();
-	else if(typeof define === 'function' && define.amd)
-		define([], factory);
-	else if(typeof exports === 'object')
-		exports["yjSharejs"] = factory();
-	else
-		root["yjSharejs"] = factory();
-})(typeof self !== 'undefined' ? self : this, function() {
-return /******/ (function(modules) { // webpackBootstrap
+/******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -80,6 +70,10 @@ return /******/ (function(modules) { // webpackBootstrap
 "use strict";
 
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
 var _weixinJsSdk = __webpack_require__(1);
 
 var _weixinJsSdk2 = _interopRequireDefault(_weixinJsSdk);
@@ -89,8 +83,7 @@ var _qrcode = __webpack_require__(2);
 var _qrcode2 = _interopRequireDefault(_qrcode);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var yjSharejs = {
+var yjShareSdk = {
     _shareData: {//微信分享用
         // shareLink:''
         // shareTitle:'',
@@ -103,12 +96,12 @@ var yjSharejs = {
         // qrIco:'',
     },
     initWx: function initWx(shareData) {
-        var _this = yjSharejs;
+        var _this = yjShareSdk;
         _this._shareData = shareData;
         _this.getJsSignInfo();
     },
     getQrCode: function getQrCode(qrCodeData) {
-        var _this = yjSharejs;
+        var _this = yjShareSdk;
 
         _this._qrCodeData = qrCodeData;
         var qrCodeEle = document.querySelector(_this._qrCodeData.qrCodeWrap);
@@ -130,15 +123,16 @@ var yjSharejs = {
         }
     },
     getJsSignInfo: function getJsSignInfo() {
-        var _this = yjSharejs;
+        var _this = yjShareSdk;
         _this.ajax({
             url: 'v1/mobile/getJsSignInfo',
             type: "POST",
             data: { url: window.location.href.split('#')[0] },
             dataType: "json",
             success: function success(response, xml) {
+                debugger;
                 // todo
-                _this.initWeixinJsSdk(JSON.parse(response).value.signInfo);
+                __this.initWeixinJsSdk(JSON.parse(response).value.signInfo);
                 //initWeixinJsSdk(ajaxData.value.signInfo,data)
             },
             fail: function fail(status) {
@@ -148,7 +142,7 @@ var yjSharejs = {
     },
 
     initWeixinJsSdk: function initWeixinJsSdk(signInfo) {
-        var _this = yjSharejs;
+        var _this = yjShareSdk;
         var host = window.location.host;
         //"http://static.oschina.net/uploads/cooperation/question_banner_one_ioXRy.jpg";
         // if(/localhost/.test(window.location.host) || /127.0.0.1/.test(window.location.host)){
@@ -256,7 +250,7 @@ var yjSharejs = {
 
 };
 
-module.exports = yjSharejs;
+window.yjShareSdk = exports.default = yjShareSdk 
 
 /***/ }),
 /* 1 */
@@ -745,7 +739,7 @@ Object.defineProperty(exports, "__esModule", {
  * - Using the 'QRCode for Javascript library'
  * - Fixed dataset of 'QRCode for Javascript library' for support full-spec.
  * - this library has no dependencies.
- *
+ * 
  * @author davidshimjs
  * @see <a href="http://www.d-project.com/" target="_blank">http://www.d-project.com/</a>
  * @see <a href="http://jeromeetienne.github.com/jquery-qrcode/" target="_blank">http://jeromeetienne.github.com/jquery-qrcode/</a>
@@ -763,7 +757,7 @@ var QRCode;
     // Licensed under the MIT license:
     //   http://www.opensource.org/licenses/mit-license.php
     //
-    // The word "QR Code" is registered trademark of
+    // The word "QR Code" is registered trademark of 
     // DENSO WAVE INCORPORATED
     //   http://www.denso-wave.com/qrcode/faqpatent-e.html
     //
@@ -1295,7 +1289,7 @@ var QRCode;
 
         /**
          * Draw the QRCode
-         *
+         * 
          * @param {QRCode} oQRCode
          */
         Drawing.prototype.draw = function (oQRCode) {
@@ -1349,7 +1343,7 @@ var QRCode;
         // http://code.google.com/p/android/issues/detail?id=5141
         // if (this._android && this._android <= 2.1) {
         //     var factor = 1 / window.devicePixelRatio;
-        //        var drawImage = CanvasRenderingContext2D.prototype.drawImage;
+        //        var drawImage = CanvasRenderingContext2D.prototype.drawImage; 
         //     CanvasRenderingContext2D.prototype.drawImage = function (image, sx, sy, sw, sh, dx, dy, dw, dh) {
         //         if (("nodeName" in image) && /img/i.test(image.nodeName)) {
         //          for (var i = arguments.length - 1; i >= 1; i--) {
@@ -1362,13 +1356,13 @@ var QRCode;
         //             arguments[4] *= factor;
         //         }
 
-        //         drawImage.apply(this, arguments);
+        //         drawImage.apply(this, arguments); 
         //     };
         // }
 
         /**
          * Check whether the user's browser supports Data URI or not
-         *
+         * 
          * @private
          * @param {Function} fSuccess Occurs if it supports Data URI
          * @param {Function} fFail Occurs if it doesn't support Data URI
@@ -1410,10 +1404,10 @@ var QRCode;
 
         /**
          * Drawing QRCode by using canvas
-         *
+         * 
          * @constructor
          * @param {HTMLElement} el
-         * @param {Object} htOption QRCode Options
+         * @param {Object} htOption QRCode Options 
          */
         var Drawing = function Drawing(el, htOption) {
             this._bIsPainted = false;
@@ -1436,8 +1430,8 @@ var QRCode;
 
         /**
          * Draw the QRCode
-         *
-         * @param {QRCode} oQRCode
+         * 
+         * @param {QRCode} oQRCode 
          */
         Drawing.prototype.draw = function (oQRCode) {
             var _elImage = this._elImage;
@@ -1484,7 +1478,7 @@ var QRCode;
 
         /**
          * Return whether the QRCode is painted or not
-         *
+         * 
          * @return {Boolean}
          */
         Drawing.prototype.isPainted = function () {
@@ -1516,7 +1510,7 @@ var QRCode;
 
     /**
      * Get the type by string length
-     *
+     * 
      * @private
      * @param {String} sText
      * @param {Number} nCorrectLevel
@@ -1566,7 +1560,7 @@ var QRCode;
     /**
      * @class QRCode
      * @constructor
-     * @example
+     * @example 
      * new QRCode(document.getElementById("test"), "http://jindo.dev.naver.com/collie");
      *
      * @example
@@ -1575,7 +1569,7 @@ var QRCode;
      *    width : 128,
      *    height : 128
      * });
-     *
+     * 
      * oQRCode.clear(); // Clear the QRCode.
      * oQRCode.makeCode("http://map.naver.com"); // Re-create the QRCode.
      *
@@ -1586,7 +1580,7 @@ var QRCode;
      * @param {Number} [vOption.height=256]
      * @param {String} [vOption.colorDark="#000000"]
      * @param {String} [vOption.colorLight="#ffffff"]
-     * @param {QRCode.CorrectLevel} [vOption.correctLevel=QRCode.CorrectLevel.H] [L|M|Q|H]
+     * @param {QRCode.CorrectLevel} [vOption.correctLevel=QRCode.CorrectLevel.H] [L|M|Q|H] 
      */
     QRCode = function QRCode(el, vOption) {
         this._htOption = {
@@ -1631,7 +1625,7 @@ var QRCode;
 
     /**
      * Make the QRCode
-     *
+     * 
      * @param {String} sText link data
      */
     QRCode.prototype.makeCode = function (sText) {
@@ -1647,7 +1641,7 @@ var QRCode;
      * Make the Image from Canvas element
      * - It occurs automatically
      * - Android below 3 doesn't support Data-URI spec.
-     *
+     * 
      * @private
      */
     QRCode.prototype.makeImage = function () {
@@ -1670,6 +1664,6 @@ var QRCode;
 })();
 exports.default = QRCode;
 
+
 /***/ })
 /******/ ]);
-});
