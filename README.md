@@ -8,13 +8,13 @@ $ npm  install yj-sharejs
 ```
 
 ```
-var  yjShareSdk = require('yj-share');
-yjShareSdk.getQrCode({
+var  yjSharejs = require('yj-share');
+yjSharejs.getQrCode({
 	qrCodeWrap:'#qrCode',
 	qrContent:"你好啊",
 	qrIco:'https://www.rrtimes.com/img/100/favicon.png'
 })
-yjShareSdk.initWx({
+yjSharejs.initWx({
 	shareLink:'https://m.rrtimes.com',
         	shareTitle:'易嘉',
         	shareDec:'易嘉人',
@@ -32,12 +32,12 @@ yjShareSdk.initWx({
 
 JS文件
 ```
-yjShareSdk.getQrCode({
+yjSharejs.getQrCode({
 	qrCodeWrap:'#qrCode',
 	qrContent:"你好啊",
 	qrIco:'https://www.rrtimes.com/img/100/favicon.png'
 })
-yjShareSdk.initWx({
+yjSharejs.initWx({
 	shareLink:'https://m.rrtimes.com',
         	shareTitle:'易嘉',
         	shareDec:'易嘉人',
@@ -45,7 +45,7 @@ yjShareSdk.initWx({
 })
 ```
 ### api
-yjShareSdk 提供生成二维码和初始化微信skd的能力
+yjSharejs 提供生成二维码和初始化微信skd的能力
 
 * 生成二维码
 
@@ -66,6 +66,3 @@ initWx以json格式接收四个参数
 |shareTitle|String|微信分享title|
 |shareDec|String|微信分享描述|
 |shareImg|String|微信分享logo|
-
-
-
