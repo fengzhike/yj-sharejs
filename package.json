@@ -1,15 +1,25 @@
 {
   "name": "yj-sharejs",
   "version": "1.0.0",
-  "description": "易嘉人产品分享sdk",
+  "description": "易嘉人系列产品分享sdk",
   "main": "index.js",
   "directories": {
-    "lib": "lib"
+    "example": "example"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fengzhike/yj-sharejs.git"
+  },
+  "keywords": [
+    "share"
+  ],
   "author": "Shun-Kai",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fengzhike/yj-sharejs/issues"
+  },
+  "homepage": "https://github.com/fengzhike/yj-sharejs#readme"
 }
