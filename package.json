@@ -1,0 +1,15 @@
+{
+  "name": "yj-sharejs",
+  "version": "1.0.0",
+  "description": "易嘉人产品分享sdk",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Shun-Kai",
+  "license": "ISC"
+}
