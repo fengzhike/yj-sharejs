@@ -7,7 +7,8 @@
     "example": "example"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --color --compress --inline --hot --port 3000 --host 0.0.0.0 --config webpack.dev.config.js"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,17 @@
   "bugs": {
     "url": "https://github.com/fengzhike/yj-sharejs/issues"
   },
-  "homepage": "https://github.com/fengzhike/yj-sharejs#readme"
+  "homepage": "https://github.com/fengzhike/yj-sharejs#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "webpack": "^3.10.0"
+  },
+  "dependencies": {
+    "qrcode": "^1.0.0",
+    "weixin-js-sdk": "^1.2.0"
+  }
 }
