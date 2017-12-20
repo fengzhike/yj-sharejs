@@ -45,7 +45,7 @@ yjSharejs.initWx({
 })
 ```
 ### api
-yjShareSdk 提供生成二维码和初始化微信skd的能力
+yjSharejs 提供生成二维码和初始化微信skd的能力
 
 * 生成二维码
 
