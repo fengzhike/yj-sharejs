@@ -1,10 +1,15 @@
+
+import yjSharejs from './lib/yjSharejs'
+
+// var yjSharejs = require('./lib/yjSharejs')
+
 window.onload = function(){
-	yjShareSdk.getQrCode({
+	yjSharejs.getQrCode({
 		qrCodeWrap:'#qrCode',
 		qrContent:"你好啊",
 		qrIco:'https://www.rrtimes.com/img/100/favicon.png'
 	})
-	yjShareSdk.initWx({
+	yjSharejs.initWx({
 		shareLink:'https://m.rrtimes.com',
 	        	shareTitle:'易嘉',
 	        	shareDec:'易嘉人',

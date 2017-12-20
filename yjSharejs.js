@@ -2,7 +2,7 @@ import wx from 'weixin-js-sdk';
 import QRCode from './qrcode.js'
 
 
-const yjShareSdk = {
+const yjSharejs = {
     _shareData:{ //微信分享用
         // shareLink:''
         // shareTitle:'',
@@ -15,12 +15,12 @@ const yjShareSdk = {
         // qrIco:'',
     },
     initWx:function(shareData){
-         var _this = yjShareSdk;
+         var _this = yjSharejs;
         _this._shareData = shareData
         _this.getJsSignInfo()
     },
     getQrCode:function(qrCodeData){
-        var _this = yjShareSdk;
+        var _this = yjSharejs;
 
         _this._qrCodeData = qrCodeData
         var qrCodeEle = document.querySelector(_this._qrCodeData.qrCodeWrap)
@@ -37,7 +37,7 @@ const yjShareSdk = {
             img.style = "position: absolute;top: 45px;left: 45px;border: 1px solid #fff;border-radius: 5px;background: #fff;"
             img.width = 30
             img.height = 30
-            img.alt="Scan me!" 
+            img.alt="Scan me!"
             qrCodeEle.appendChild(img)
         }
 
@@ -45,16 +45,15 @@ const yjShareSdk = {
 
     },
     getJsSignInfo:function(){
-         var _this = yjShareSdk;
+         var _this = yjSharejs;
         _this.ajax({
             url:'v1/mobile/getJsSignInfo',
             type: "POST",
             data: { url:window.location.href.split('#')[0]},
             dataType: "json",
             success: function (response, xml) {
-                debugger
                 // todo
-                __this.initWeixinJsSdk(JSON.parse(response).value.signInfo)
+                _this.initWeixinJsSdk(JSON.parse(response).value.signInfo)
                 //initWeixinJsSdk(ajaxData.value.signInfo,data)
             },
             fail: function (status) {
@@ -65,7 +64,7 @@ const yjShareSdk = {
     },
 
     initWeixinJsSdk:function (signInfo) {
-         var _this = yjShareSdk;
+         var _this = yjSharejs;
         var host = window.location.host
             //"http://static.oschina.net/uploads/cooperation/question_banner_one_ioXRy.jpg";
         // if(/localhost/.test(window.location.host) || /127.0.0.1/.test(window.location.host)){
@@ -176,4 +175,4 @@ const yjShareSdk = {
 
 }
 
-export default  yjShareSdk
+module.exports=yjSharejs
