@@ -27,7 +27,7 @@ yjSharejs.initWx({
 先下载yjshare文件
 
 ```
-<script src="./lib/yjshare.js"></script>
+<script src="./lib/yjshare.min.js"></script>
 ```
 
 JS文件
