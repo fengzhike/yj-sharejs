@@ -5,8 +5,8 @@ module.exports = {
 		yjSharejs:'./yjSharejs'
 	},
 	output:{
-		path:__dirname+'/build',
-		filename:'[name].js',
+		path:__dirname+'/lib',
+		filename:'[name].min.js',
 		library: {
 			commonjs: "yjSharejs",
 		   	root: "yjSharejs"
@@ -23,14 +23,14 @@ module.exports = {
 	},
 
 	plugins:[
-		// new webpack.optimize.UglifyJsPlugin({
-		//             minimize: true,
-		//             sourceMap:false,
-		//             compressor: {
-		//                 drop_debugger: true,
-		//                 warnings: false,
-		//                 drop_console: true
-		//             }
-		//  }),
+		new webpack.optimize.UglifyJsPlugin({
+		            minimize: true,
+		            sourceMap:false,
+		            compressor: {
+		                drop_debugger: true,
+		                warnings: false,
+		                drop_console: true
+		            }
+		 }),
 	]
 }

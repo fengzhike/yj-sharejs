@@ -1,5 +1,5 @@
 
-import yjSharejs from './lib/yjSharejs'
+// import yjSharejs from './lib/yjSharejs'
 
 // var yjSharejs = require('./lib/yjSharejs')
 

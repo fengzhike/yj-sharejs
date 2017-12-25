@@ -8,7 +8,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --color --compress --inline --hot --port 3000 --host 0.0.0.0 --config webpack.dev.config.js"
+    "start": "webpack-dev-server --color --compress --inline --hot --port 3000 --host 0.0.0.0 --config webpack.dev.config.js",
+    "build":"webpack",
+    "lib":"webpack --config webpack.prod.config.js"
   },
   "repository": {
     "type": "git",
