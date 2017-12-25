@@ -1,6 +1,6 @@
 {
   "name": "yj-sharejs",
-  "version": "1.1.1",
+  "version": "1.1.3",
   "description": "易嘉人系列产品分享sdk",
   "main": "index.js",
   "directories": {
