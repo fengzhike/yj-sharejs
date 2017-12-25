@@ -5,7 +5,7 @@ module.exports = {
 		yjSharejs:'./yjSharejs'
 	},
 	output:{
-		path:__dirname+'/build',
+		path:__dirname+'/lib',
 		filename:'[name].js',
 		library: {
 			commonjs: "yjSharejs",

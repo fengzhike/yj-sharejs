@@ -112,6 +112,7 @@ var yjSharejs = {
 
         _this._qrCodeData = qrCodeData;
         var qrCodeEle = document.querySelector(_this._qrCodeData.qrCodeWrap);
+        qrCodeEle.innerHTML = "";
         var qr2 = new _qrcode2.default(qrCodeEle, {
             width: 120,
             height: 120
@@ -122,6 +123,7 @@ var yjSharejs = {
             qrCodeEle.style.position = 'relative';
             var img = document.createElement('img');
             img.src = _this._qrCodeData.qrIco;
+            img.id = "yj-share-qrcode";
             img.style = "position: absolute;top: 45px;left: 45px;border: 1px solid #fff;border-radius: 5px;background: #fff;";
             img.width = 30;
             img.height = 30;
